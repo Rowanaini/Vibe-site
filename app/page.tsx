@@ -10,11 +10,13 @@ export default function Home() {
       <section className="max-w-6xl mx-auto py-24 px-8">
         {/* 标题区 */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8">About Me</h2>
+          <h2 className="text-3xl font-bold text-slate-800 mb-8">Welcome</h2>
           <div className="h-1.5 w-12 bg-blue-600"></div>
           <p className="text-lg text-slate-600 leading-relaxed">
-          这里是你的介绍文字。当你在这里添加足够多的内容时，你的网页就可以上下滑动了！
-          你可以试着多复制几行这个段落，看看滚动条是否出现了。
+          你好, 欢迎来到我的个人网站！我十分喜欢它，你会更多的了解我，试着向下滑动吧！
+          </p>
+          <p className="text-lg text-slate-600 leading-relaxed">
+          Hello,This is Rowan and welcome to my personal website! I really like it. You will get to know more about me. Please scroll down!
           </p>
         </div>
 
@@ -23,46 +25,65 @@ export default function Home() {
           
           {/* 卡片 1 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">Machine Learning</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">AI Trend Predictor</h3>
+            <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">About Rowan 关于阮哲炜</div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">My Family, My life and you</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
-              使用神经网络分析社交媒体趋势，预测下一个爆火的 Vibe 风格。
-            </p>
+            <span className="block mb-1">
+             It makes me a better person and helps me understand love and responsibility.
+             </span>
+             <span className="block text-slate-400 text-sm">
+             使我成为一个更好的人，使我明白爱与责任。
+             </span>
+          </p>
+              
             <div className="flex gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Python</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">PyTorch</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Guitar</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Camping</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Cooking</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Volunteer</span>
             </div>
           </div>
 
           {/* 卡片 2 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Data Visualization</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">Health Tracker Pro</h3>
+            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">My Education 教育背景</div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">Australian National University</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
-              将复杂的健康数据转化为直观的 3D 图表，让数据触手可及。
+              Master Of International Management, 2025-2027 
+            </p>
+             <h3 className="text-2xl font-bold text-slate-800 mb-3">University Of Western Ontario</h3>
+            <p className="text-slate-500 leading-relaxed mb-6">
+              Bachelor Of Accounting, 2020-2024
             </p>
             <div className="flex gap-2">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Next.js</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">D3.js</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">PowerBI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Marketing</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Credit/Debit</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Financial Report</span>
             </div>
           </div>
 
            {/* 卡片 3 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Data Visualization</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">Health Tracker Pro</h3>
+            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Work Experience 工作经历</div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">NIO | Sales Consultant Intern</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
-              将复杂的健康数据转化为直观的 3D 图表，让数据触手可及。
+              Oct 2024 - Jan 2025
+            </p>
+                         <h3 className="text-2xl font-bold text-slate-800 mb-3">EasyTransfer | Marketing  Intern</h3>
+            <p className="text-slate-500 leading-relaxed mb-6">
+              Apr 2022 - Sep 2022
             </p>
             <div className="flex gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Next.js</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">D3.js</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">China</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Australia</span>
             </div>
           </div>
 
            {/* 卡片 4 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Data Visualization</div>
+            <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Skills 技能</div>
             <h3 className="text-2xl font-bold text-slate-800 mb-3">Health Tracker Pro</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
               将复杂的健康数据转化为直观的 3D 图表，让数据触手可及。
