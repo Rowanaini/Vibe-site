@@ -25,22 +25,21 @@ export default function Home() {
           
           {/* 卡片 1 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">About Rowan 关于阮哲炜</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">My Family, My life and you</h3>
+            <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">About me 阮哲炜</div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">"G'day, mate!</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
             <span className="block mb-1">
-             It makes me a better person and helps me understand love and responsibility.
+             a postgraduate student at ANU, 25 years old from China, Chinese name means "the wise and great one". Loving spicy food, road trip and photography, being a awesome assistant is what i want to be.    
              </span>
              <span className="block text-slate-400 text-sm">
-             使我成为一个更好的人，使我明白爱与责任。
+             你好，请聘用我。
              </span>
           </p>
               
             <div className="flex gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Guitar</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Camping</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Cooking</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Volunteer</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Creative</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Connecting</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Confidence</span>
             </div>
           </div>
 
@@ -60,7 +59,6 @@ export default function Home() {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">PowerBI</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Marketing</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Credit/Debit</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Financial Report</span>
             </div>
           </div>
 
@@ -75,18 +73,31 @@ export default function Home() {
             <p className="text-slate-500 leading-relaxed mb-6">
               Apr 2022 - Sep 2022
             </p>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">Self Service Internship | Volunteer club founder</h3>
+            <p className="text-slate-500 leading-relaxed mb-6">
+              Aug 2025 - Present
+            </p>
             <div className="flex gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">China</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Australia</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Public relationship</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Marketing</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Event organizer</span>
             </div>
           </div>
 
            {/* 卡片 4 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
             <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Skills 技能</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">Health Tracker Pro</h3>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">PowerBI | Excel</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
-              将复杂的健康数据转化为直观的 3D 图表，让数据触手可及。
+              Transform complex excel data into intuitive 3D charts within one day,
+            </p>
+            <h3 className="text-2xl font-bold text-slate-800 mb-3">Connection</h3>
+            <p className="text-slate-500 leading-relaxed mb-6">
+              Experienced in customer communication, volunteer coordination, external outreach, and cross-organizational collaboration.
+            </p>
+                        <h3 className="text-2xl font-bold text-slate-800 mb-3">AI utilization | Web deployment, Application design</h3>
+            <p className="text-slate-500 leading-relaxed mb-6">
+              0$ cost operating website and application by using VS code, next.js, Vercel and my hand typing.
             </p>
             <div className="flex gap-2">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Next.js</span>
