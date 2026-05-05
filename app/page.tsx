@@ -8,7 +8,7 @@ export default function Home() {
 
       {/* 第二屏：项目展示区 */}
       <section className="max-w-6xl mx-auto py-24 px-8">
-        {/* 标题区 */}
+        {/* 标题区请雇用我，请雇用我，请雇用我，请雇用我啊啊啊啊啊啊 */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-800 mb-8">Welcome</h2>
           <div className="h-1.5 w-12 bg-blue-600"></div>
@@ -23,28 +23,42 @@ export default function Home() {
         {/* 项目网格 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          {/* 卡片 1 */}
-          <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
-            <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">About me 阮哲炜</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-3">"G'day, mate!</h3>
-            <p className="text-slate-500 leading-relaxed mb-6">
-            <span className="block mb-1">
-             a postgraduate student at ANU, 25 years old from China, Chinese name means "the wise and great one". Loving spicy food, road trip and photography, being a awesome assistant is what i want to be.    
-             </span>
-             <span className="block text-slate-400 text-sm">
-             你好，请聘用我。
-             </span>
-          </p>
-              
-            <div className="flex gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Creative</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Connecting</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Confidence</span>
-            </div>
-          </div>
+{/* 卡片 1 */}
+<div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
+  
+  {/* 悬停弹出的照片 - 关键代码开始 */}
+  <div className="absolute opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 rotate-0 group-hover:rotate-6 -top-20 right-10 w-48 h-32 transition-all duration-500 pointer-events-none z-50">
+    <img 
+      src="/test.jpg" 
+      alt="Preview" 
+      className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
+    />
+  </div>
+  {/* 关键代码结束 */}
+
+  <div className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4">
+    About me 阮哲炜
+  </div>
+  <h3 className="text-2xl font-bold text-slate-800 mb-3">"G'day, mate!</h3>
+  <p className="text-slate-500 leading-relaxed mb-6 whitespace-pre-line">
+    a postgraduate student at ANU, 25 years old from China, Chinese name means "the wise and great one". Loving spicy food, road trip and photography, being a awesome assistant is what i want to be.
+  </p>
+  <div className="flex gap-2">
+    <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Creative</span>
+    <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Connecting</span>
+    <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Confidence</span>
+  </div>
+</div>
 
           {/* 卡片 2 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
+             <div className="absolute opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 rotate-0 group-hover:rotate-6 -top-20 right-10 w-48 h-32 transition-all duration-500 pointer-events-none z-50">
+    <img 
+      src="/test.jpg" 
+      alt="Preview" 
+      className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
+    />
+  </div>
             <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">My Education 教育背景</div>
             <h3 className="text-2xl font-bold text-slate-800 mb-3">Australian National University</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
@@ -64,6 +78,13 @@ export default function Home() {
 
            {/* 卡片 3 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
+            <div className="absolute opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 rotate-0 group-hover:rotate-6 -top-20 right-10 w-48 h-32 transition-all duration-500 pointer-events-none z-50">
+    <img 
+      src="/test.jpg" 
+      alt="Preview" 
+      className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
+    />
+  </div>
             <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Work Experience 工作经历</div>
             <h3 className="text-2xl font-bold text-slate-800 mb-3">NIO | Sales Consultant Intern</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
@@ -86,6 +107,13 @@ export default function Home() {
 
            {/* 卡片 4 */}
           <div className="group relative bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300">
+            <div className="absolute opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 rotate-0 group-hover:rotate-6 -top-20 right-10 w-48 h-32 transition-all duration-500 pointer-events-none z-50">
+          <img 
+           src="/test.jpg" 
+          alt="Preview" 
+           className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
+            />
+           </div>
             <div className="text-purple-600 font-bold text-xs tracking-widest uppercase mb-4">Skills 技能</div>
             <h3 className="text-2xl font-bold text-slate-800 mb-3">PowerBI | Excel</h3>
             <p className="text-slate-500 leading-relaxed mb-6">
