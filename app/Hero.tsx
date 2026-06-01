@@ -130,7 +130,7 @@ export default function Hero({ isResumeActive, setIsResumeActive }: HeroProps) {
     : 'bg-white/40 border-slate-200/50 shadow-sm'
 }`}>
   <a href="#" className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isResumeActive ? 'text-zinc-600 pointer-events-none' : 'text-slate-600 hover:text-blue-600'}`}>
-    Referee 
+    Project
   </a>
   <a href="#" className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isResumeActive ? 'text-zinc-600 pointer-events-none' : 'text-slate-600 hover:text-blue-600'}`}>
     Referee
