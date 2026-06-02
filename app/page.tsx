@@ -100,7 +100,7 @@ export default function Home() {
                   <h2 className="text-3xl font-bold text-slate-800 mb-8">Welcome</h2>
                   <div className="h-1.5 w-12 bg-blue-600 mb-6"></div>
                   <p className="text-lg text-slate-600 leading-relaxed mb-2">
-                    你好, 欢迎来到我的个人网站！我十分喜欢它，你会更多的了解我，试着向下滑动！
+                    你好, 欢迎来到我的个人网站！我十分喜欢它，你会更多的了解我，试着向下滑动hhhhhhhhhhhhhhh！
                   </p>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Hello, This is Rowan and welcome to my personal website! I really like it. You will get to know more about me. Please scroll down!
@@ -159,6 +159,7 @@ export default function Home() {
                     <div className="flex gap-2">
                       <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Public relationship</span>
                       <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Marketing</span>
+                      <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Marketing</span>
                       <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">Event organizer</span>
                     </div>
                   </div>
@@ -184,7 +185,7 @@ export default function Home() {
 
                 {/* 底部作品集留白 */}
                 <div className="mt-12 h-[500px] bg-blue-50 rounded-3xl border-2 border-dashed border-blue-200 flex items-center justify-center">
-                  <span className="text-blue-400 font-medium">这里可以放你的项目作品集</span>
+                  <span className="text-blue-400 font-medium">这里可以放你的项目作品集呼呼呼呼</span>
                 </div>
               </section>
             ) : (
