@@ -149,7 +149,7 @@ export default function Hero({
                 : 'text-slate-600 hover:text-blue-600'
           }`}
         >
-          Project
+          Home
         </button>
 
         {/* Referee 按钮：点击顺畅滑入云端推荐信板块 */}
@@ -190,7 +190,7 @@ export default function Hero({
               : 'text-slate-600 hover:text-blue-600'
           }`}
         >
-          {isResumeActive ? '✕ Close Terminal' : 'Resume Magic'}
+          {isResumeActive ? '✕ Close Terminal' : 'Short Resume'}
         </button>
       </nav>
     </section>
