@@ -90,12 +90,20 @@ const NeuralNetworkBackground = ({ isDark }: { isDark: boolean }) => {
   return <canvas ref={canvasRef} className="absolute inset-0 z-0" />;
 };
 
+// 🌟 核心改动 1：在属性里无缝注入白天模式下的切页控制状态
 interface HeroProps {
   isResumeActive: boolean;
   setIsResumeActive: (active: boolean) => void;
+  activeTab: 'cards' | 'referee';
+  setActiveTab: (tab: 'cards' | 'referee') => void;
 }
 
-export default function Hero({ isResumeActive, setIsResumeActive }: HeroProps) {
+export default function Hero({ 
+  isResumeActive, 
+  setIsResumeActive,
+  activeTab,
+  setActiveTab
+}: HeroProps) {
   return (
     <section className={`relative min-h-screen w-full flex flex-col items-center justify-center transition-colors duration-1000 ${isResumeActive ? 'bg-black' : 'bg-[#F8FAFC]'}`}>
       <NeuralNetworkBackground isDark={isResumeActive} />
@@ -122,45 +130,69 @@ export default function Hero({ isResumeActive, setIsResumeActive }: HeroProps) {
         </motion.p>
       </div>
 
-      {/* 🌟 100% 还原的原本大胶囊导航栏，并赋予核心点击切换逻辑 */}
-     {/* 🌟 调整后的原本大胶囊导航栏，无缝融入下载选项 */}
-<nav className={`absolute bottom-12 z-20 w-[95%] max-w-5xl px-8 py-5 rounded-2xl border transition-all duration-700 flex justify-around items-center backdrop-blur-xl ${
-  isResumeActive 
-    ? 'bg-zinc-950/40 border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.15)]' 
-    : 'bg-white/40 border-slate-200/50 shadow-sm'
-}`}>
-  <a href="#" className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isResumeActive ? 'text-zinc-600 pointer-events-none' : 'text-slate-600 hover:text-blue-600'}`}>
-    Project
-  </a>
-  <a href="#" className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isResumeActive ? 'text-zinc-600 pointer-events-none' : 'text-slate-600 hover:text-blue-600'}`}>
-    Referee
-  </a>
+      {/* 🌟 核心改动 2：100% 保留你原本的大胶囊导航栏的所有毛玻璃样式、阴影、位置和尺寸 */}
+      <nav className={`absolute bottom-12 z-20 w-[95%] max-w-5xl px-8 py-5 rounded-2xl border transition-all duration-700 flex justify-around items-center backdrop-blur-xl ${
+        isResumeActive 
+          ? 'bg-zinc-950/40 border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.15)]' 
+          : 'bg-white/40 border-slate-200/50 shadow-sm'
+      }`}>
+        
+        {/* Project 按钮：切换到主页卡片流 */}
+        <button 
+          onClick={() => setActiveTab('cards')}
+          disabled={isResumeActive}
+          className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${
+            isResumeActive 
+              ? 'text-zinc-600 pointer-events-none' 
+              : activeTab === 'cards'
+                ? 'text-blue-600 font-extrabold'
+                : 'text-slate-600 hover:text-blue-600'
+          }`}
+        >
+          Project
+        </button>
 
-  {/* 🌟 新增的下载/预览简历选项，完美适配白天和黑夜极客模式 */}
-  <a 
-    href="/Rowan_Ruan_Resume.pdf" // 确保你的PDF放在 public 文件夹下
-    target="_blank" 
-    rel="noopener noreferrer"
-    className={`text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 ${
-      isResumeActive 
-        ? 'text-emerald-500/80 hover:text-emerald-400 font-mono' 
-        : 'text-slate-600 hover:text-blue-600'
-    }`}
-  >
-    {isResumeActive ? '> [GET_PDF]' : 'Download CV'}
-  </a>
+        {/* Referee 按钮：点击顺畅滑入云端推荐信板块 */}
+        <button 
+          onClick={() => setActiveTab('referee')}
+          disabled={isResumeActive}
+          className={`text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${
+            isResumeActive 
+              ? 'text-zinc-600 pointer-events-none' 
+              : activeTab === 'referee'
+                ? 'text-emerald-600 font-extrabold'
+                : 'text-slate-600 hover:text-emerald-600'
+          }`}
+        >
+          Referee
+        </button>
 
-  <button 
-    onClick={() => setIsResumeActive(!isResumeActive)}
-    className={`text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 ${
-      isResumeActive 
-        ? 'text-emerald-400 font-mono scale-115 border-b border-emerald-500 pb-0.5' 
-        : 'text-slate-600 hover:text-blue-600'
-    }`}
-  >
-    {isResumeActive ? '✕ Close Terminal' : 'Resume Magic'}
-  </button>
-</nav>
+        {/* 🌟 完美适配白天和黑夜极客模式的下载选项 */}
+        <a 
+          href="/Rowan_Ruan_Resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={`text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 ${
+            isResumeActive 
+              ? 'text-emerald-500/80 hover:text-emerald-400 font-mono' 
+              : 'text-slate-600 hover:text-blue-600'
+          }`}
+        >
+          {isResumeActive ? '> [GET_PDF]' : 'Download CV'}
+        </a>
+
+        {/* 极客黑夜大闸开关 */}
+        <button 
+          onClick={() => setIsResumeActive(!isResumeActive)}
+          className={`text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 ${
+            isResumeActive 
+              ? 'text-emerald-400 font-mono scale-115 border-b border-emerald-500 pb-0.5' 
+              : 'text-slate-600 hover:text-blue-600'
+          }`}
+        >
+          {isResumeActive ? '✕ Close Terminal' : 'Resume Magic'}
+        </button>
+      </nav>
     </section>
   );
 }
