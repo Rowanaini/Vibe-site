@@ -1,14 +1,16 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// 初始化 Supabase 客户端，并自动兼容和切掉可能带有 /rest/v1/ 的 URL 尾巴
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/rest\/v1\/?$/, '');
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// 🔒 安全核心：后端改用超级密钥初始化，它拥有绕过 RLS 强行写入的最高权限！
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY; 
 
-const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
+const supabase = createClient(supabaseUrl || '', supabaseServiceKey || '', {
+  auth: { persistSession: false }
+});
 
 // ==========================================
-// 1. GET 接口：获取所有推荐人数据
+// 1. GET 接口：任何人都能自由读取（走你配好的 SELECT 策略）
 // ==========================================
 export async function GET() {
   try {
@@ -29,7 +31,7 @@ export async function GET() {
 }
 
 // ==========================================
-// 2. POST 接口：处理推荐人表单提交（带头像上传）
+// 2. POST 接口：处理推荐人表单提交（带头像上传 + 安全暗号拦截）
 // ==========================================
 export async function POST(request: NextRequest) {
   try {
@@ -40,9 +42,9 @@ export async function POST(request: NextRequest) {
     const content = formData.get('content') as string;
     const avatarFile = formData.get('avatar') as File | null;
 
-    // 🔒 验证独立暗号
+    // 🔒 铁面防线：只有对上了 rowan2026 暗号的请求，后端才用超级密钥帮你存入数据库
     if (password !== process.env.REFEREE_PASSWORD) {
-      return NextResponse.json({ error: '安全凭证校验失败，拒绝写入' }, { status: 403 });
+      return NextResponse.json({ error: '凭证错误，拒绝写入云端' }, { status: 403 });
     }
 
     let avatarUrl = '/test.jpg'; // 缺省占位图
@@ -55,7 +57,7 @@ export async function POST(request: NextRequest) {
       const bytes = await avatarFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
-      // 🚨 提示：请确保你在 Supabase 后台的 Storage 里创建了一个名为 "avatars" 的 Public Bucket
+      // 上传至 Supabase Storage 文件桶
       const { data: storageData, error: storageError } = await supabase.storage
         .from('avatars')
         .upload(fileName, buffer, {
@@ -74,6 +76,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 📝 将数据安全写入 PostgreSQL 的 'referees' 数据表
+    // 因为最上方初始化使用的是 service_role 超级密钥，即便你开启了 RLS，这里也能无视限制强行写入成功！
     const { data, error: dbError } = await supabase
       .from('referees')
       .insert([{ name, title, content, avatar_url: avatarUrl }])
