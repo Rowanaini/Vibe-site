@@ -100,7 +100,7 @@ export default function Home() {
                   <h2 className="text-3xl font-bold text-slate-800 mb-8">Welcome</h2>
                   <div className="h-1.5 w-12 bg-blue-600 mb-6"></div>
                   <p className="text-lg text-slate-600 leading-relaxed mb-2">
-                    你好, 欢迎来到我的个人网站！我十分喜欢它，你会更多的了解我，试着向下滑动！
+                    -
                   </p>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Hello, This is Rowan and welcome to my personal website! I really like it. You will get to know more about me. Please scroll down!
